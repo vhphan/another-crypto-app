@@ -39,7 +39,7 @@ router.get('/trending', cache30m, asyncHandler(async (req, res) => {
         (checkIfCoinsInfoIsStale(trending["coins"])).then(isStale => {
                 if (isStale) {
                     const {storeCoinsInfoInDb} = require("#src/services/cryptoData");
-                    storeCoinsInfoInDb().then(r => console.log('done storing coins info in db'));
+                    storeCoinsInfoInDb().then(() => console.log('done storing coins info in db'));
                 }
             }
         );

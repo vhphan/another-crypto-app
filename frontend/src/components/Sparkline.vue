@@ -17,8 +17,8 @@ export default {
   data() {
     return {
       stroke: 3,
-      width: 256,
-      height: 80,
+      width: 256/2,
+      height: 80/2,
     };
   },
 
@@ -30,13 +30,14 @@ export default {
 
       const data = this.data || [];
       const highestPoint = Math.max.apply(null, data) + 1;
+      const lowestPoint = Math.min.apply(null, data);
       const coordinates = [];
       const totalPoints = this.data.length - 1;
 
       data.forEach((item, n) => {
         const x = (n / totalPoints) * width + stroke;
-        const y = height - (item / highestPoint) * height + stroke;
-
+        // const y = height - (item / highestPoint) * height + stroke;
+        const y = height - ((item - lowestPoint) / (highestPoint - lowestPoint)) * height + stroke;
         coordinates.push({x, y});
       });
 
@@ -61,6 +62,7 @@ export default {
 
       return ["M" + coordinates[0].x, coordinates[0].y, ...path].join(" ");
     },
+
     fillEndPath() {
       return `V ${this.height} L 4 ${this.height} Z`;
     },

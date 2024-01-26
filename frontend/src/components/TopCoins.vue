@@ -37,16 +37,22 @@ const columns = [
 
 const tableRows = computed(() => {
   return topCoins.value.reduce((acc, coin) => {
+
+    if (!coin || !coin?.id) {
+      return acc;
+    }
+
     acc.push({
-      id: coin?.id,
-      name: coin?.name,
-      symbol: coin?.symbol,
-      image: coin?.image,
-      current_price: coin?.current_price,
-      price_change_percentage_24h: coin?.price_change_percentage_24h,
-      sparkline: coin?.sparkline_in_7d?.price,
+      id: coin?.id ?? 'N/A',
+      name: coin?.name ?? 'N/A',
+      symbol: coin?.symbol ?? 'N/A',
+      image: coin?.image ?? 'N/A',
+      current_price: coin?.current_price ?? 'N/A',
+      price_change_percentage_24h: coin?.price_change_percentage_24h ?? 'N/A',
+      sparkline: coin?.sparkline_in_7d?.price ?? 'N/A',
     });
     return acc;
+
   }, []);
 });
 
@@ -71,13 +77,20 @@ const imageColumns = [
             :props="props"
             :class="imageColumns.includes(col.name) ? 'q-pa-none' : ''"
         >
-          <q-avatar v-if="col.name === 'image'" :src="props.row.image"/>
 
-          <sparkline v-if="col.name==='sparkline'" v-bind:data="[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]"></sparkline>
+          <sparkline v-if="col.name==='sparkline'" v-bind:data="props.row[col.name]"></sparkline>
+
+
+          <q-td v-else-if="col.name==='image'">
+            <img :src="props.row[col.field]" alt="" style="max-height: 1.5rem;">
+          </q-td>
 
           <q-td v-else>
-            {{ props.row[col.name] }}
+            <div>
+              {{ props.row[col.name] }}
+            </div>
           </q-td>
+
         </q-td>
       </q-tr>
     </template>

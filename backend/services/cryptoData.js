@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const {logger} = require("#src/middlewares/logger");
 
 const getTopMarketCapCoins = async () => {
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1';
+    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true';
     const response = await fetch(url);
     return await response.json();
 }
