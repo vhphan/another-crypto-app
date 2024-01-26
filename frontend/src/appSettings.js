@@ -1,0 +1,1 @@
+export const apiTimeoutInMs = 30_000;

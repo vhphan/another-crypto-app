@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {ref} from "vue";
+import {apiTimeoutInMs} from "@/appSettings.js";
 
 console.log(import.meta.env.PROD);
 

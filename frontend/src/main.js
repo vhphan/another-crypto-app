@@ -1,20 +1,28 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import { Quasar } from 'quasar'
 
-// Vuetify
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+
+// Import Quasar css
+import 'quasar/src/css/index.sass'
+import {createPinia} from "pinia";
+
+// Assumes your root component is App.vue
+// and placed in same folder as main.js
+import App from './App.vue'
 import router from "@/router/index.js";
 
-const vuetify = createVuetify({
-  components,
-  directives,
+const myApp = createApp(App)
+
+myApp.use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
 })
 
-const app = createApp(App)
-app.use(router)
-app.use(vuetify)
+myApp.use(router);
 
-app.mount('#app')
+const pinia = createPinia()
+myApp.use(pinia)
+
+// Assumes you have a <div id="app"></div> in your index.html
+myApp.mount('#app')
