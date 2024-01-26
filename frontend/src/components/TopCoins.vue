@@ -60,13 +60,19 @@ const imageColumns = [
   'image',
 ];
 
+const handleRowClick = (row, index) => {
+  console.log('row clicked', index, row);
+};
+
 </script>
 
 <template>
+
   <q-table
       :rows="tableRows"
       :columns="columns"
       row-key="id"
+      @row-click="handleRowClick"
   >
 
     <template v-slot:body="props">
@@ -79,7 +85,6 @@ const imageColumns = [
         >
 
           <sparkline v-if="col.name==='sparkline'" v-bind:data="props.row[col.name]"></sparkline>
-
 
           <q-td v-else-if="col.name==='image'">
             <img :src="props.row[col.field]" alt="" style="max-height: 1.5rem;">

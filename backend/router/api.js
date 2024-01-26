@@ -2,6 +2,7 @@ const express = require('express');
 const {cache30m, cache1h} = require("../middlewares/cache");
 const asyncHandler = require("../middlewares/async");
 const {checkIfCoinsInfoIsStale} = require("#src/services/cryptoData");
+const {cache10m} = require("#src/middlewares/cache");
 const router = express.Router();
 
 router.get('/hello', (req, res) => {
@@ -60,7 +61,7 @@ router.get('/topCoins', cache1h, asyncHandler(async (req, res) => {
     }
 ));
 
-router.get('/ohlc', asyncHandler(async (req, res) => {
+router.get('/ohlc', cache10m, asyncHandler(async (req, res) => {
             const {getOhlc} = require("../services/cryptoData");
             const {symbol, days} = req.query;
             const ohlc = await getOhlc(symbol, 'usd', days);
