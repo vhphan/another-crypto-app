@@ -6,7 +6,7 @@
 // Path: backend/db/database.js
 
 const sqlite3 = require('sqlite3').verbose();
-const logger = require("#src/logger");
+const {logger} = require("#src/middlewares/logger");
 
 class Database {
     constructor() {

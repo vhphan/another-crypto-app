@@ -67,7 +67,8 @@ router.get('/ohlc', cache10m, asyncHandler(async (req, res) => {
             const ohlc = await getOhlc(symbol.toLowerCase(), vsCurrency.toLowerCase(), days);
             res.json({
                 success: true,
-                data: ohlc
+                data: ohlc?.Data?.Data,
+                params: req.query
             });
         }
     )

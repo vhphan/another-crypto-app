@@ -22,7 +22,7 @@ export const useMainStore = defineStore({
                     }
                 })
             ).data;
-            this.ohlcData = responseData?.data?.data?.Data;
+            this.ohlcData = responseData?.data;
         }
     },
     getters: {}

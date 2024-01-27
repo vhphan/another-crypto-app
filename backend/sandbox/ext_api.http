@@ -90,6 +90,13 @@ GET https://api.coingecko.com/api/v3/coins/{{id}}/ohlc?vs_currency=usd&days=90
 Content-Type: application/json
 X-CMC_PRO_API_KEY:{{COINMARKET_CAP_API_KEY}}
 
+###
+
+GET https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=10
+
+###
+
+GET http://localhost:3000/api/v1/ohlc?symbol=btc&vsCurrency=USD&days=90
 
 
 
