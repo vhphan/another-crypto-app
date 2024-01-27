@@ -9,3 +9,6 @@ GET http://localhost:3000/api/v1/wait?delay=2000
 ###
 
 GET http://localhost:3000/api/v1/topCoins
+###
+
+GET http://localhost:3000/api/v1/trending

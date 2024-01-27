@@ -1,0 +1,4 @@
+.idea
+.vscode
+.env
+/backend/sandbox/http-client.private.env.json

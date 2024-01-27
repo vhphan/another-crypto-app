@@ -6,6 +6,7 @@ export const apiRoutes = {
     // dailyStatsRegion: '/v1/dailyStatsRegion',
     trending: '/trending',
     topCoins: '/topCoins',
+    ohlc: '/ohlc',
 };
 
 export const apiGet = (urlRef, options = {}) => {

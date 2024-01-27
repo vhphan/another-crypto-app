@@ -6,7 +6,8 @@
   "scripts": {
     "backend-dev-win": "set NODE_ENV=development && nodemon --ignore 'logs/' --delay 3 app.js",
     "backend-dev-linux": "export NODE_ENV=development && nodemon --ignore 'logs/' --delay 3 app.js",
-    "initDb": "node db/init.js"
+    "initDb": "node db/init.js",
+    "debugCrypto": "node services/cryptoData.js"
   },
   "keywords": [],
   "author": "",

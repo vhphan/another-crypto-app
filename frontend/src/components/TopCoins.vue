@@ -60,8 +60,9 @@ const imageColumns = [
   'image',
 ];
 
-const handleRowClick = (row, index) => {
-  console.log('row clicked', index, row);
+const handleRowClick = (evt, row) => {
+  console.log('row clicked', evt, row);
+  mainStore.ohlcSymbol = row.symbol;
 };
 
 </script>
@@ -72,11 +73,14 @@ const handleRowClick = (row, index) => {
       :rows="tableRows"
       :columns="columns"
       row-key="id"
-      @row-click="handleRowClick"
+      dark
   >
 
     <template v-slot:body="props">
-      <q-tr :props="props">
+      <q-tr :props="props"
+      @click="(evt) => handleRowClick(evt, props.row)"
+
+      >
         <q-td
             v-for="col in props.cols"
             :key="col.name"

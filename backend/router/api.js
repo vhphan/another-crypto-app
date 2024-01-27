@@ -35,7 +35,7 @@ router.get('/wait', async (req, res) => {
 });
 
 router.get('/trending', cache30m, asyncHandler(async (req, res) => {
-        const {getTrending} = require("../services/cryptoData");
+        const {getTrending} = require("#src/services/cryptoData");
         const trending = await getTrending();
         (checkIfCoinsInfoIsStale(trending["coins"])).then(isStale => {
                 if (isStale) {
@@ -52,7 +52,7 @@ router.get('/trending', cache30m, asyncHandler(async (req, res) => {
 ));
 
 router.get('/topCoins', cache1h, asyncHandler(async (req, res) => {
-        const {getTopMarketCapCoins} = require("../services/cryptoData");
+        const {getTopMarketCapCoins} = require("#src/services/cryptoData");
         const coins = await getTopMarketCapCoins();
         res.json({
             success: true,
@@ -62,9 +62,9 @@ router.get('/topCoins', cache1h, asyncHandler(async (req, res) => {
 ));
 
 router.get('/ohlc', cache10m, asyncHandler(async (req, res) => {
-            const {getOhlc} = require("../services/cryptoData");
-            const {symbol, days} = req.query;
-            const ohlc = await getOhlc(symbol, 'usd', days);
+            const {getOhlc} = require("#src/services/cryptoData");
+            const {symbol, days, vsCurrency} = req.query;
+            const ohlc = await getOhlc(symbol.toLowerCase(), vsCurrency.toLowerCase(), days);
             res.json({
                 success: true,
                 data: ohlc
