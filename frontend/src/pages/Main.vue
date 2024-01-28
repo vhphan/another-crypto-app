@@ -2,6 +2,7 @@
 import {ref} from 'vue';
 import Trending from "@/components/Trending.vue";
 import TopCoins from "@/components/TopCoins.vue";
+import CandleStick from "@/components/CandleStick.vue";
 
 
 const tab = ref('trending');
@@ -21,6 +22,7 @@ const tab = ref('trending');
     </q-tab-panel>
 
     <q-tab-panel name="topCoins">
+      <candle-stick/>
       <top-coins/>
     </q-tab-panel>
 
