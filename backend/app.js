@@ -7,13 +7,36 @@ const app = express();
 
 const path = require('path');
 const errorHandler = require("#src/middlewares/error");
+const {logger} = require("#src/middlewares/logger");
 
 const port = 3000;
+
+require('dotenv').config();
 
 app.use(cors());
 
 // serve static files from the frontend/dist directory
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Middleware to log start time
+app.use((req, res, next) => {
+    req.requestTime = process.hrtime();
+    next();
+});
+
+// Middleware to log end time and calculate total time
+app.use((req, res, next) => {
+    const start = req.requestTime;
+    const end = process.hrtime(start);
+
+    // end[0] is in seconds, end[1] is in nanoseconds
+    const totalTime = end[0] * 1000 + end[1] / 1e6; // convert to milliseconds
+
+    logger.info(`Request to ${req.path} took ${totalTime} ms`);
+    next();
+});
+
+
 
 // serve the frontend/index.html file
 app.get('/app', (req, res) => {
@@ -22,6 +45,8 @@ app.get('/app', (req, res) => {
 
 // use the router in router/api.js
 app.use('/api/v1', require('./router/api.js'));
+
+
 
 app.use(errorHandler);
 
