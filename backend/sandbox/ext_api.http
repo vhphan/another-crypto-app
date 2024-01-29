@@ -98,6 +98,19 @@ GET https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=1
 
 GET http://localhost:3000/api/v1/ohlc?symbol=btc&vsCurrency=USD&days=90
 
+### get news from crupto panic for btc
+
+GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}&currencies=btc
+
+
+### get news
+GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}
+
+
+
+
+### get news
+GET https://cryptopanic.com/api/v1/posts/?auth_token={{123}}
 
 
 

@@ -1,16 +1,31 @@
 const {logger} = require("#src/middlewares/logger");
 const Database = require("#src/db/database");
+const {CRYPTOPANIC_API_KEY} = require("#src/services/keys");
+
+async function getRequest(url, params='') {
+    const response = await fetch(url + params);
+    if (!response.ok) {
+        logger.error(`HTTP error! status: ${response.status} for url ${url} and params ${params}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+}
+
+const getUrls = {
+    trending: 'https://api.coingecko.com/api/v3/search/trending',
+    coinsInfo: 'https://api.coingecko.com/api/v3/coins/list',
+    topMarketCapCoins: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true',
+    ohlc: 'https://min-api.cryptocompare.com/data/v2/histoday',
+    headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY
+};
+
 
 const getTopMarketCapCoins = async () => {
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true';
-    const response = await fetch(url);
-    return await response.json();
+    return await getRequest(getUrls.topMarketCapCoins);
 };
 
 const getTrending = async () => {
-    const url = 'https://api.coingecko.com/api/v3/search/trending';
-    const response = await fetch(url);
-    return await response.json();
+    return await getRequest(getUrls.trending);
 };
 
 const checkIfCoinsInfoIsStale = async (trendingCoins) => {
@@ -50,9 +65,7 @@ const checkIfCoinsInfoIsStale = async (trendingCoins) => {
 };
 
 const getCoinsInfo = async () => {
-    const url = 'https://api.coingecko.com/api/v3/coins/list';
-    const response = await fetch(url);
-    return await response.json();
+    return await getRequest(getUrls.coinsInfo);
 };
 
 const storeCoinsInfoInDb = async () => {
@@ -88,12 +101,17 @@ const storeCoinsInfoInDb = async () => {
     await db.close();
     logger.info('done storing coins info in db');
 };
+
 const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90) => {
-    const url = 'https://min-api.cryptocompare.com/data/v2/histoday';
     const params = `?fsym=${symbol}&tsym=${vsCurrency}&limit=${days}`;
-    const response = await fetch(url + params);
-    return await response.json();
+    return await getRequest(getUrls.ohlc, params);
 };
+
+const getHeadlinesForCoin = async (coinId) => {
+    const params = coinId ? `&currencies=${coinId}` : '';
+    return await getRequest(getUrls.headlines, params);
+}
+
 
 if (require.main === module) {
     // getTrending().then(data => console.log(data));
@@ -111,4 +129,5 @@ module.exports = {
     getOhlc,
     checkIfCoinsInfoIsStale,
     getTopMarketCapCoins,
+    getHeadlinesForCoin
 };

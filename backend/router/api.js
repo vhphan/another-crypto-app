@@ -74,4 +74,17 @@ router.get('/ohlc', cache10m, asyncHandler(async (req, res) => {
     )
 );
 
+router.get('/headlines', cache30m, asyncHandler(async (req, res) => {
+            const {getHeadlinesForCoin} = require("#src/services/cryptoData");
+            const {coinId} = req.query;
+            const headlines = await getHeadlinesForCoin(coinId);
+            res.json({
+                success: true,
+                data: headlines?.results,
+                params: req.query
+            });
+        }
+    )
+);
+
 module.exports = router;
