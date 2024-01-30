@@ -11,6 +11,7 @@ export const useMainStore = defineStore({
         topCoins: useLocalStorage('topCoins', []),
         ohlcSymbol: useLocalStorage('ohlcSymbol', 'BTC'),
         ohlcData: useLocalStorage('ohlcData', []),
+        news: useLocalStorage('news', []),
     }),
     actions: {
         async getOhlcData(symbol = 'BTC', vsCurrency = 'USD', days = 90) {

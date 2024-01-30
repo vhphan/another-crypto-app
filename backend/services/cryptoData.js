@@ -16,7 +16,7 @@ const getUrls = {
     coinsInfo: 'https://api.coingecko.com/api/v3/coins/list',
     topMarketCapCoins: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true',
     ohlc: 'https://min-api.cryptocompare.com/data/v2/histoday',
-    headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY
+    headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY + '&public=true&kind=news'
 };
 
 
@@ -107,9 +107,9 @@ const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90) => {
     return await getRequest(getUrls.ohlc, params);
 };
 
-const getHeadlinesForCoin = async (coinId) => {
+const getHeadlinesForCoin = async (coinId, page=1) => {
     const params = coinId ? `&currencies=${coinId}` : '';
-    return await getRequest(getUrls.headlines, params);
+    return await getRequest(getUrls.headlines, params + `&page=${page}`);
 }
 
 

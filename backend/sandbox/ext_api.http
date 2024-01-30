@@ -104,7 +104,7 @@ GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}&cur
 
 
 ### get news
-GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}
+GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}&kind=news&public=true
 
 
 

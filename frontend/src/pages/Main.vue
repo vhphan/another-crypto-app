@@ -22,7 +22,13 @@ const tab = ref('trending');
     </q-tab-panel>
 
     <q-tab-panel name="topCoins">
-      <candle-stick/>
+      <div class="row">
+        <candle-stick
+        class="col-xs-12 col-sm-8 "
+        />
+        <div class="col-xs-12 col-sm-4" style="min-height: 50px; background-color: red;">
+        </div>
+      </div>
       <top-coins/>
     </q-tab-panel>
 

@@ -1,0 +1,829 @@
+{
+  "count": 200,
+  "next": "https:\/\/cryptopanic.com\/api\/v1\/posts\/?auth_token=20899c668514643b1c2b1634207cb9e8770a1c14&kind=news&public=true&page=2",
+  "previous": null,
+  "results": [
+    {
+      "kind": "news",
+      "domain": "cryptoglobe.com",
+      "source": {
+        "title": "CryptoGlobe",
+        "region": "en",
+        "domain": "cryptoglobe.com",
+        "path": null
+      },
+      "title": "Terra Classic Community Burns 1.1 Billion $LUNC in a Single Week",
+      "published_at": "2024-01-30T01:07:00Z",
+      "slug": "Terra-Classic-Community-Burns-11-Billion-LUNC-in-a-Single-Week",
+      "currencies": [
+        {
+          "code": "LUNC",
+          "title": "Terra Luna Classic",
+          "slug": "terra-luna",
+          "url": "https:\/\/cryptopanic.com\/news\/terra-luna\/"
+        }
+      ],
+      "id": 19213069,
+      "url": "https:\/\/cryptopanic.com\/news\/19213069\/Terra-Classic-Community-Burns-11-Billion-LUNC-in-a-Single-Week",
+      "created_at": "2024-01-30T01:07:00Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptoslate.com",
+      "source": {
+        "title": "CryptoSlate",
+        "region": "en",
+        "domain": "cryptoslate.com",
+        "path": null
+      },
+      "title": "EU agency says crypto firms can sometimes serve non-European users",
+      "published_at": "2024-01-30T01:00:24Z",
+      "slug": "EU-agency-says-crypto-firms-can-sometimes-serve-non-European-users",
+      "id": 19213054,
+      "url": "https:\/\/cryptopanic.com\/news\/19213054\/EU-agency-says-crypto-firms-can-sometimes-serve-non-European-users",
+      "created_at": "2024-01-30T01:00:24Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "dailyhodl.com",
+      "source": {
+        "title": "The Daily Hodl",
+        "region": "en",
+        "domain": "dailyhodl.com",
+        "path": null
+      },
+      "title": "Top Crypto Strategist Predicts Over 50% Rally for Ethereum Rival, Says One Low-Cap Altcoin Looks Amazing",
+      "published_at": "2024-01-30T01:00:15Z",
+      "slug": "Top-Crypto-Strategist-Predicts-Over-50-Rally-for-Ethereum-Rival-Says-One-Low-Cap-Altcoin-Looks-Amazing",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        },
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        },
+        {
+          "code": "SOL",
+          "title": "Solana",
+          "slug": "solana",
+          "url": "https:\/\/cryptopanic.com\/news\/solana\/"
+        },
+        {
+          "code": "MOVR",
+          "title": "Moonriver",
+          "slug": "moonriver",
+          "url": "https:\/\/cryptopanic.com\/news\/moonriver\/"
+        }
+      ],
+      "id": 19213057,
+      "url": "https:\/\/cryptopanic.com\/news\/19213057\/Top-Crypto-Strategist-Predicts-Over-50-Rally-for-Ethereum-Rival-Says-One-Low-Cap-Altcoin-Looks-Amazing",
+      "created_at": "2024-01-30T01:00:15Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "newsbtc.com",
+      "source": {
+        "title": "NewsBTC",
+        "region": "en",
+        "domain": "newsbtc.com",
+        "path": null
+      },
+      "title": "Glassnode Co-Founder Warns: Bitcoin’s Surge Could Trigger A $1 Billion Liquidation Event – Here’s Why",
+      "published_at": "2024-01-30T01:00:03Z",
+      "slug": "Glassnode-Co-Founder-Warns-Bitcoins-Surge-Could-Trigger-A-1-Billion-Liquidation-Event-Heres-Why",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        },
+        {
+          "code": "USDT",
+          "title": "Tether",
+          "slug": "tether",
+          "url": "https:\/\/cryptopanic.com\/news\/tether\/"
+        },
+        {
+          "code": "XLM",
+          "title": "Stellar",
+          "slug": "stellar",
+          "url": "https:\/\/cryptopanic.com\/news\/stellar\/"
+        },
+        {
+          "code": "OP",
+          "title": "Optimism",
+          "slug": "optimism",
+          "url": "https:\/\/cryptopanic.com\/news\/optimism\/"
+        },
+        {
+          "code": "KEY",
+          "title": "SelfKey",
+          "slug": "selfkey",
+          "url": "https:\/\/cryptopanic.com\/news\/selfkey\/"
+        }
+      ],
+      "id": 19213056,
+      "url": "https:\/\/cryptopanic.com\/news\/19213056\/Glassnode-Co-Founder-Warns-Bitcoins-Surge-Could-Trigger-A-1-Billion-Liquidation-Event-Heres-Why",
+      "created_at": "2024-01-30T01:00:03Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "decrypt.co",
+      "source": {
+        "title": "Decrypt",
+        "region": "en",
+        "domain": "decrypt.co",
+        "path": null
+      },
+      "title": "DOJ Charges Three People in $1.9 Billion Crypto Scam",
+      "published_at": "2024-01-30T00:56:17Z",
+      "slug": "DOJ-Charges-Three-People-in-19-Billion-Crypto-Scam",
+      "id": 19213041,
+      "url": "https:\/\/cryptopanic.com\/news\/19213041\/DOJ-Charges-Three-People-in-19-Billion-Crypto-Scam",
+      "created_at": "2024-01-30T00:56:17Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "bitcoinist.com",
+      "source": {
+        "title": "Bitcoinist",
+        "region": "en",
+        "domain": "bitcoinist.com",
+        "path": null
+      },
+      "title": "Amazon Greenlights Film Exposing Bitfinex Hacker’s $3 Billion Money Laundering Scheme",
+      "published_at": "2024-01-30T00:30:39Z",
+      "slug": "Amazon-Greenlights-Film-Exposing-Bitfinex-Hackers-3-Billion-Money-Laundering-Scheme",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        },
+        {
+          "code": "USDT",
+          "title": "Tether",
+          "slug": "tether",
+          "url": "https:\/\/cryptopanic.com\/news\/tether\/"
+        },
+        {
+          "code": "SD",
+          "title": "Stader",
+          "slug": "stader",
+          "url": "https:\/\/cryptopanic.com\/news\/stader\/"
+        }
+      ],
+      "id": 19213024,
+      "url": "https:\/\/cryptopanic.com\/news\/19213024\/Amazon-Greenlights-Film-Exposing-Bitfinex-Hackers-3-Billion-Money-Laundering-Scheme",
+      "created_at": "2024-01-30T00:30:39Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "ambcrypto.com",
+      "source": {
+        "title": "AMBCrypto",
+        "region": "en",
+        "domain": "ambcrypto.com",
+        "path": null
+      },
+      "title": "DOT’s price can reach $15, if this prediction is to be believed",
+      "published_at": "2024-01-30T00:30:33Z",
+      "slug": "DOTs-price-can-reach-15-if-this-prediction-is-to-be-believed",
+      "currencies": [
+        {
+          "code": "DOT",
+          "title": "Polkadot",
+          "slug": "polkadot",
+          "url": "https:\/\/cryptopanic.com\/news\/polkadot\/"
+        }
+      ],
+      "id": 19213028,
+      "url": "https:\/\/cryptopanic.com\/news\/19213028\/DOTs-price-can-reach-15-if-this-prediction-is-to-be-believed",
+      "created_at": "2024-01-30T00:30:33Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "feeds2.benzinga.com",
+      "votes": {
+        "negative": 0,
+        "positive": 1,
+        "important": 1,
+        "liked": 1,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      },
+      "source": {
+        "title": "Benzinga",
+        "region": "en",
+        "domain": "feeds2.benzinga.com",
+        "path": null
+      },
+      "title": "Mark Cuban's Crypto 'AMA': Dallas Mavericks Say 'Yes' To DOGE, Printer 'Go Brrr,' His Crypto Holdings",
+      "published_at": "2024-01-30T00:24:07Z",
+      "slug": "Mark-Cubans-Crypto-AMA-Dallas-Mavericks-Say-Yes-To-DOGE-Printer-Go-Brrr-His-Crypto-Holdings",
+      "currencies": [
+        {
+          "code": "SOL",
+          "title": "Solana",
+          "slug": "solana",
+          "url": "https:\/\/cryptopanic.com\/news\/solana\/"
+        },
+        {
+          "code": "DOGE",
+          "title": "Dogecoin",
+          "slug": "dogecoin",
+          "url": "https:\/\/cryptopanic.com\/news\/dogecoin\/"
+        },
+        {
+          "code": "MATIC",
+          "title": "Polygon",
+          "slug": "matic-network",
+          "url": "https:\/\/cryptopanic.com\/news\/matic-network\/"
+        },
+        {
+          "code": "INJ",
+          "title": "Injective",
+          "slug": "injective-protocol",
+          "url": "https:\/\/cryptopanic.com\/news\/injective-protocol\/"
+        },
+        {
+          "code": "OP",
+          "title": "Optimism",
+          "slug": "optimism",
+          "url": "https:\/\/cryptopanic.com\/news\/optimism\/"
+        },
+        {
+          "code": "NFT",
+          "title": "APENFT",
+          "slug": "apenft",
+          "url": "https:\/\/cryptopanic.com\/news\/apenft\/"
+        }
+      ],
+      "id": 19213033,
+      "url": "https:\/\/cryptopanic.com\/news\/19213033\/Mark-Cubans-Crypto-AMA-Dallas-Mavericks-Say-Yes-To-DOGE-Printer-Go-Brrr-His-Crypto-Holdings",
+      "created_at": "2024-01-30T00:24:07Z"
+    },
+    {
+      "kind": "news",
+      "domain": "theblock.co",
+      "source": {
+        "title": "The Block",
+        "region": "en",
+        "domain": "theblock.co",
+        "path": null
+      },
+      "title": "SEC charges founders of $1.7 billion HyperFund scheme with fraud",
+      "published_at": "2024-01-30T00:22:01Z",
+      "slug": "SEC-charges-founders-of-17-billion-HyperFund-scheme-with-fraud",
+      "currencies": [
+        {
+          "code": "GAL",
+          "title": "Galxe",
+          "slug": "project-galaxy",
+          "url": "https:\/\/cryptopanic.com\/news\/project-galaxy\/"
+        }
+      ],
+      "id": 19213019,
+      "url": "https:\/\/cryptopanic.com\/news\/19213019\/SEC-charges-founders-of-17-billion-HyperFund-scheme-with-fraud",
+      "created_at": "2024-01-30T00:22:01Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cointelegraph.com",
+      "votes": {
+        "negative": 1,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      },
+      "source": {
+        "title": "CoinTelegraph",
+        "region": "en",
+        "domain": "cointelegraph.com",
+        "path": null
+      },
+      "title": "$5B flight from GBTC likely led to outflows in other regions: CoinShares",
+      "published_at": "2024-01-30T00:18:26Z",
+      "slug": "5B-flight-from-GBTC-likely-led-to-outflows-in-other-regions-CoinShares",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        }
+      ],
+      "id": 19213016,
+      "url": "https:\/\/cryptopanic.com\/news\/19213016\/5B-flight-from-GBTC-likely-led-to-outflows-in-other-regions-CoinShares",
+      "created_at": "2024-01-30T00:18:26Z"
+    },
+    {
+      "kind": "news",
+      "domain": "decrypt.co",
+      "source": {
+        "title": "Decrypt",
+        "region": "en",
+        "domain": "decrypt.co",
+        "path": null
+      },
+      "title": "Binance Pours Cold Water on NFT Game That Pulled In $115 Million for Its Mint",
+      "published_at": "2024-01-30T00:15:53Z",
+      "slug": "Binance-Pours-Cold-Water-on-NFT-Game-That-Pulled-In-115-Million-for-Its-Mint",
+      "currencies": [
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        }
+      ],
+      "id": 19213017,
+      "url": "https:\/\/cryptopanic.com\/news\/19213017\/Binance-Pours-Cold-Water-on-NFT-Game-That-Pulled-In-115-Million-for-Its-Mint",
+      "created_at": "2024-01-30T00:15:53Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptoslate.com",
+      "source": {
+        "title": "CryptoSlate",
+        "region": "en",
+        "domain": "cryptoslate.com",
+        "path": null
+      },
+      "title": "TD Cowen expects spot Ethereum ETF no earlier than 2025 or 2026",
+      "published_at": "2024-01-30T00:11:41Z",
+      "slug": "TD-Cowen-expects-spot-Ethereum-ETF-no-earlier-than-2025-or-2026",
+      "currencies": [
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        }
+      ],
+      "id": 19213008,
+      "url": "https:\/\/cryptopanic.com\/news\/19213008\/TD-Cowen-expects-spot-Ethereum-ETF-no-earlier-than-2025-or-2026",
+      "created_at": "2024-01-30T00:11:41Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "dailycoin.com",
+      "votes": {
+        "negative": 1,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      },
+      "source": {
+        "title": "Dailycoin",
+        "region": "en",
+        "domain": "dailycoin.com",
+        "path": null
+      },
+      "title": "$500M Exits Crypto Funds Last Week Despite Easing GBTC Tide",
+      "published_at": "2024-01-30T00:05:00Z",
+      "slug": "500M-Exits-Crypto-Funds-Last-Week-Despite-Easing-GBTC-Tide",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        },
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        },
+        {
+          "code": "SOL",
+          "title": "Solana",
+          "slug": "solana",
+          "url": "https:\/\/cryptopanic.com\/news\/solana\/"
+        },
+        {
+          "code": "DOT",
+          "title": "Polkadot",
+          "slug": "polkadot",
+          "url": "https:\/\/cryptopanic.com\/news\/polkadot\/"
+        }
+      ],
+      "id": 19212996,
+      "url": "https:\/\/cryptopanic.com\/news\/19212996\/500M-Exits-Crypto-Funds-Last-Week-Despite-Easing-GBTC-Tide",
+      "created_at": "2024-01-30T00:05:00Z"
+    },
+    {
+      "kind": "news",
+      "domain": "cryptointelligence.co.uk",
+      "votes": {
+        "negative": 0,
+        "positive": 2,
+        "important": 1,
+        "liked": 1,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 1
+      },
+      "source": {
+        "title": "cryptointelligence",
+        "region": "en",
+        "domain": "cryptointelligence.co.uk",
+        "path": null
+      },
+      "title": "Google to Allow Cryptocurrency Ads, Boosting Bitcoin ETF Speculation",
+      "published_at": "2024-01-29T23:49:38Z",
+      "slug": "Google-to-Allow-Cryptocurrency-Ads-Boosting-Bitcoin-ETF-Speculation",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        }
+      ],
+      "id": 19212980,
+      "url": "https:\/\/cryptopanic.com\/news\/19212980\/Google-to-Allow-Cryptocurrency-Ads-Boosting-Bitcoin-ETF-Speculation",
+      "created_at": "2024-01-29T23:49:38Z"
+    },
+    {
+      "kind": "news",
+      "domain": "cryptopotato.com",
+      "votes": {
+        "negative": 0,
+        "positive": 1,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 1
+      },
+      "source": {
+        "title": "Feed - Cryptopotato.Com",
+        "region": "en",
+        "domain": "cryptopotato.com",
+        "path": null
+      },
+      "title": "Bitcoin Will Hit $170,000 After The Halving: Anthony Scaramucci",
+      "published_at": "2024-01-29T23:41:33Z",
+      "slug": "Bitcoin-Will-Hit-170000-After-The-Halving-Anthony-Scaramucci",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        },
+        {
+          "code": "AA",
+          "title": "ALVA",
+          "slug": "alva",
+          "url": "https:\/\/cryptopanic.com\/news\/alva\/"
+        }
+      ],
+      "id": 19212966,
+      "url": "https:\/\/cryptopanic.com\/news\/19212966\/Bitcoin-Will-Hit-170000-After-The-Halving-Anthony-Scaramucci",
+      "created_at": "2024-01-29T23:41:33Z"
+    },
+    {
+      "kind": "news",
+      "domain": "cryptoglobe.com",
+      "source": {
+        "title": "CryptoGlobe",
+        "region": "en",
+        "domain": "cryptoglobe.com",
+        "path": null
+      },
+      "title": "Crypto Trader Nets $1.6 Million in Just 14 Hours From Trading Solana-Based Memecoin",
+      "published_at": "2024-01-29T23:41:07Z",
+      "slug": "Crypto-Trader-Nets-16-Million-in-Just-14-Hours-From-Trading-Solana-Based-Memecoin",
+      "currencies": [
+        {
+          "code": "SOL",
+          "title": "Solana",
+          "slug": "solana",
+          "url": "https:\/\/cryptopanic.com\/news\/solana\/"
+        },
+        {
+          "code": "USDC",
+          "title": "USDC",
+          "slug": "usd-coin",
+          "url": "https:\/\/cryptopanic.com\/news\/usd-coin\/"
+        }
+      ],
+      "id": 19212964,
+      "url": "https:\/\/cryptopanic.com\/news\/19212964\/Crypto-Trader-Nets-16-Million-in-Just-14-Hours-From-Trading-Solana-Based-Memecoin",
+      "created_at": "2024-01-29T23:41:07Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "feeds2.benzinga.com",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 2,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      },
+      "source": {
+        "title": "Benzinga",
+        "region": "en",
+        "domain": "feeds2.benzinga.com",
+        "path": null
+      },
+      "title": "Retail's Bitcoin Price Prediction By End Of 2024: Below $20,000, But Technical Analysts See 'Run To $48K-50K'",
+      "published_at": "2024-01-29T23:31:30Z",
+      "slug": "Retails-Bitcoin-Price-Prediction-By-End-Of-2024-Below-20000-But-Technical-Analysts-See-Run-To-48K-50K",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        }
+      ],
+      "id": 19212976,
+      "url": "https:\/\/cryptopanic.com\/news\/19212976\/Retails-Bitcoin-Price-Prediction-By-End-Of-2024-Below-20000-But-Technical-Analysts-See-Run-To-48K-50K",
+      "created_at": "2024-01-29T23:31:30Z"
+    },
+    {
+      "kind": "news",
+      "domain": "blockworks.co",
+      "source": {
+        "title": "Blockworks",
+        "region": "en",
+        "domain": "blockworks.co",
+        "path": null
+      },
+      "title": "SEC settles with ‘Bitcoin Beautee’ over $1.7B HyperFund scheme",
+      "published_at": "2024-01-29T23:29:53Z",
+      "slug": "SEC-settles-with-Bitcoin-Beautee-over-17B-HyperFund-scheme",
+      "currencies": [
+        {
+          "code": "BTC",
+          "title": "Bitcoin",
+          "slug": "bitcoin",
+          "url": "https:\/\/cryptopanic.com\/news\/bitcoin\/"
+        }
+      ],
+      "id": 19212977,
+      "url": "https:\/\/cryptopanic.com\/news\/19212977\/SEC-settles-with-Bitcoin-Beautee-over-17B-HyperFund-scheme",
+      "created_at": "2024-01-29T23:29:53Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "cryptobriefing.com",
+      "source": {
+        "title": "CryptoBriefing",
+        "region": "en",
+        "domain": "cryptobriefing.com",
+        "path": null
+      },
+      "title": "Play-to-earn is alive and kicking: Ronin Network sees 193% monthly growth in activity",
+      "published_at": "2024-01-29T23:28:03Z",
+      "slug": "Play-to-earn-is-alive-and-kicking-Ronin-Network-sees-193-monthly-growth-in-activity",
+      "currencies": [
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        },
+        {
+          "code": "USDC",
+          "title": "USDC",
+          "slug": "usd-coin",
+          "url": "https:\/\/cryptopanic.com\/news\/usd-coin\/"
+        },
+        {
+          "code": "XLM",
+          "title": "Stellar",
+          "slug": "stellar",
+          "url": "https:\/\/cryptopanic.com\/news\/stellar\/"
+        },
+        {
+          "code": "RON",
+          "title": "Ronin",
+          "slug": "ronin",
+          "url": "https:\/\/cryptopanic.com\/news\/ronin\/"
+        }
+      ],
+      "id": 19212949,
+      "url": "https:\/\/cryptopanic.com\/news\/19212949\/Play-to-earn-is-alive-and-kicking-Ronin-Network-sees-193-monthly-growth-in-activity",
+      "created_at": "2024-01-29T23:28:03Z",
+      "votes": {
+        "negative": 0,
+        "positive": 0,
+        "important": 0,
+        "liked": 0,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      }
+    },
+    {
+      "kind": "news",
+      "domain": "dailycoin.com",
+      "votes": {
+        "negative": 0,
+        "positive": 1,
+        "important": 0,
+        "liked": 1,
+        "disliked": 0,
+        "lol": 0,
+        "toxic": 0,
+        "saved": 0,
+        "comments": 0
+      },
+      "source": {
+        "title": "Dailycoin",
+        "region": "en",
+        "domain": "dailycoin.com",
+        "path": null
+      },
+      "title": "Here's What Polygon zkEVM Becoming a Type 2 zkEVM Means",
+      "published_at": "2024-01-29T23:05:00Z",
+      "slug": "Heres-What-Polygon-zkEVM-Becoming-a-Type-2-zkEVM-Means",
+      "currencies": [
+        {
+          "code": "ETH",
+          "title": "Ethereum",
+          "slug": "ethereum",
+          "url": "https:\/\/cryptopanic.com\/news\/ethereum\/"
+        },
+        {
+          "code": "MATIC",
+          "title": "Polygon",
+          "slug": "matic-network",
+          "url": "https:\/\/cryptopanic.com\/news\/matic-network\/"
+        }
+      ],
+      "id": 19212930,
+      "url": "https:\/\/cryptopanic.com\/news\/19212930\/Heres-What-Polygon-zkEVM-Becoming-a-Type-2-zkEVM-Means",
+      "created_at": "2024-01-29T23:05:00Z"
+    }
+  ]
+}

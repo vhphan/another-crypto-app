@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {ref} from "vue";
 import {apiTimeoutInMs} from "@/appSettings.js";
+import {Loading} from "quasar";
 
 console.log(import.meta.env.PROD);
 
@@ -13,11 +14,10 @@ export function getBaseUrl() {
 }
 
 const showLoading = function () {
-    // TODO: add loading spinner
-
+    Loading.show();
 };
 const hideLoading = function () {
-    // TODO: remove loading spinner
+    Loading.hide();
 };
 
 export class MyFetch {
@@ -33,6 +33,7 @@ export class MyFetch {
 
     errorHandling(error, statusCode) {
         // TODO: add error handling
+
     }
 
     static generateUrl(url, params = {}) {

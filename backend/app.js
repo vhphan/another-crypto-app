@@ -1,5 +1,3 @@
-// write the minimal node/express app
-
 const express = require('express');
 const cors = require('cors');
 
@@ -15,13 +13,21 @@ require('dotenv').config();
 
 app.use(cors());
 
-// serve static files from the frontend/dist directory
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
 // Middleware to log start time
 app.use((req, res, next) => {
     req.requestTime = process.hrtime();
     next();
+});
+
+// use the router in router/api.js
+app.use('/api/v1', require('./router/api.js'));
+
+// serve static files from the frontend/dist directory
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// serve the frontend/index.html file
+app.get('/app', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
 // Middleware to log end time and calculate total time
@@ -36,20 +42,8 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
-// serve the frontend/index.html file
-app.get('/app', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
-
-// use the router in router/api.js
-app.use('/api/v1', require('./router/api.js'));
-
-
-
 app.use(errorHandler);
 
 app.listen(port, () => {
-    console.log(`App listening on port ${port}`);
+    logger.info(`App listening on port ${port}`);
 });
