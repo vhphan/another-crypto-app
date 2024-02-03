@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "frontend-dev": "vite",
+    "frontend-dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ssh-v2": "ssh hawk -L 5430:localhost:5432 -L 8080:localhost:8080 -L 9000:localhost:22 -L 5001:localhost:5001"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.9",

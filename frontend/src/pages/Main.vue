@@ -3,6 +3,7 @@ import {ref} from 'vue';
 import Trending from "@/components/Trending.vue";
 import TopCoins from "@/components/TopCoins.vue";
 import CandleStick from "@/components/CandleStick.vue";
+import Headlines from "@/components/Headlines.vue";
 
 
 const tab = ref('trending');
@@ -24,10 +25,9 @@ const tab = ref('trending');
     <q-tab-panel name="topCoins">
       <div class="row">
         <candle-stick
-        class="col-xs-12 col-sm-8 "
+            class="col-xs-12 col-sm-8 "
         />
-        <div class="col-xs-12 col-sm-4" style="min-height: 50px; background-color: red;">
-        </div>
+        <headlines/>
       </div>
       <top-coins/>
     </q-tab-panel>
