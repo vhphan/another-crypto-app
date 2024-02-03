@@ -2,6 +2,7 @@
 import {computed, ref} from "vue";
 import {useRoute} from "vue-router";
 import {basePath} from "../../config";
+import {useQuasar} from "quasar";
 
 
 const route = useRoute();
@@ -25,6 +26,13 @@ const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 };
 
+const $q = useQuasar();
+const isDark = ref(false);
+const toggleDarkMode = () => {
+  isDark.value = !isDark.value;
+  $q.dark.set(isDark.value);
+};
+
 </script>
 
 <template>
@@ -32,7 +40,7 @@ const toggleLeftDrawer = () => {
 
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer"/>
+<!--        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer"/>-->
 
         <q-toolbar-title class="col-3" shrink>
 <!--          <q-avatar>-->
@@ -52,15 +60,18 @@ const toggleLeftDrawer = () => {
                 :class="{'q-tab--active': routeName === item.to}"
             />
           </q-tabs>
+        <q-space/>
+        <q-btn icon="contrast" flat round dense
+        @click="toggleDarkMode"
+        />
       </q-toolbar>
-
 
 
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
-    </q-drawer>
+<!--    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>-->
+<!--      &lt;!&ndash; drawer content &ndash;&gt;-->
+<!--    </q-drawer>-->
 
     <q-page-container>
       <router-view/>

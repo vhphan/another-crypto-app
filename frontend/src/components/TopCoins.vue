@@ -73,7 +73,6 @@ const handleRowClick = (evt, row) => {
       :rows="tableRows"
       :columns="columns"
       row-key="id"
-      dark
   >
 
     <template v-slot:body="props">

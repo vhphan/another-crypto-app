@@ -25,6 +25,11 @@ myApp.use(Quasar, {
             spinnerSize: 100,
             spinnerColor: 'primary',
         },
+        // dark: {
+        //
+        // }
+
+
     },
 });
 
