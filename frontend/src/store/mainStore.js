@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia';
 import {useLocalStorage} from "@vueuse/core";
 import {apiGet, apiRoutes} from "@/api/apiCalls.js";
-
+import {Dark} from "quasar";
 
 export const useMainStore = defineStore({
     id: 'mainStore',
@@ -27,5 +27,12 @@ export const useMainStore = defineStore({
             this.ohlcData = responseData?.data;
         }
     },
-    getters: {}
+    getters: {
+        backgroundColor() {
+            if (Dark.isActive){
+                return 'bg-purple-7';
+            }
+            return 'bg-blue-2';
+        }
+    }
 });

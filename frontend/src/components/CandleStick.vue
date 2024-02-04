@@ -3,9 +3,10 @@
 import {useMainStore} from "@/store/mainStore.js";
 import {storeToRefs} from "pinia";
 import {computed, ref} from "vue";
+import {useQuasar} from "quasar";
 
 const mainStore = useMainStore();
-const {ohlcData} = storeToRefs(mainStore);
+const {ohlcData, ohlcSymbol} = storeToRefs(mainStore);
 const apexChart = ref(null);
 
 const cleanedData = computed(() => {
@@ -18,10 +19,16 @@ const cleanedData = computed(() => {
     }
 );
 
-const options = {
+const $q = useQuasar();
+
+const options = computed(() => ({
   title: {
-    text: 'CandleStick Chart',
-    align: 'left'
+    text: (ohlcSymbol.value + '/usd').toUpperCase(),
+    align: 'center',
+    style: {
+      fontSize: '20px',
+      color: $q.dark.isActive ? '#fff' : '#000'
+    }
   },
   xaxis: {
     type: 'datetime'
@@ -31,8 +38,16 @@ const options = {
       enabled: true
     }
   },
-
-};
+  tooltip: {
+    theme: $q.dark.isActive ? 'dark' : 'light',
+    style: {
+      fontSize: '14px',
+      fontFamily: 'arial',
+      backgroundColor: '#ee0505',
+      color: '#e51010'
+    }
+  },
+}));
 
 const series = computed(() => {
   return [

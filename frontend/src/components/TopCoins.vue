@@ -62,17 +62,13 @@ const imageColumns = [
 ];
 
 const handleRowClick = (evt, row) => {
-  console.log('row clicked', evt, row);
   mainStore.ohlcSymbol = row.symbol;
 };
 
 const $q = useQuasar();
 const rowClasses = computed(() => {
   return (row) => {
-    if ($q.dark.isActive) {
-      return row.symbol === ohlcSymbol.value ? 'bg-purple-7' : '';
-    }
-    return row.symbol === ohlcSymbol.value ? 'bg-blue-2' : '';
+      return row.symbol === ohlcSymbol.value ? mainStore.backgroundColor : '';
   };
 });
 

@@ -3,8 +3,6 @@ import {ref} from "vue";
 import {apiTimeoutInMs} from "@/appSettings.js";
 import {Loading} from "quasar";
 
-console.log(import.meta.env.PROD);
-
 
 export function getBaseUrl() {
     if (import.meta.env.PROD) {

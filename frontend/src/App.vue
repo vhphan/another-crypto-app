@@ -9,7 +9,6 @@ const emits = defineEmits();
 const mainStore = useMainStore();
 
 watch(() => mainStore.ohlcSymbol, (value, oldValue) => {
-  console.log('ohlcSymbol changed', mainStore.ohlcSymbol);
   mainStore.getOhlcData(value);
 });
 

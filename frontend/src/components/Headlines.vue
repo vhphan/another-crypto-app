@@ -21,7 +21,6 @@ const fetchNewsData = async () => {
     return;
   }
   headlines.value = responseData?.data;
-  console.log(headlines.value);
 };
 
 onMounted(fetchNewsData);
@@ -76,11 +75,15 @@ watch([() => filterHeadlinesBySymbol.value, () => ohlcSymbol.value],
       class="col-xs-12 col-sm-4"
       :style="`min-height: 50px; max-height: ${chartHeight}; overflow-y: auto;`"
   >
-    <div>
+    <div
+        style="border: solid 2px darkred;"
+        :class="mainStore.backgroundColor"
+    >
       <q-space/>
       <q-toggle
           label="Filter by symbol"
           v-model="filterHeadlinesBySymbol"
+          color="grey"
       />
     </div>
     <q-card
