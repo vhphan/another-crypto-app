@@ -10,10 +10,16 @@ const routeName = computed(() => route.name);
 
 const sideBarItems = [
   {
-    label: 'Main',
+    label: 'Trending Coins',
     icon: 'mdi-home',
-    to: `${basePath}main`
+    to: `${basePath}trending`
   },
+  {
+    label: 'Top Coins',
+    icon: 'mdi-currency-usd',
+    to: `${basePath}topCoins`
+  },
+
   {
     label: 'About',
     icon: 'mdi-information',
@@ -27,10 +33,8 @@ const toggleLeftDrawer = () => {
 };
 
 const $q = useQuasar();
-const isDark = ref(false);
 const toggleDarkMode = () => {
-  isDark.value = !isDark.value;
-  $q.dark.set(isDark.value);
+  $q.dark.set(!$q.dark.isActive);
 };
 
 </script>

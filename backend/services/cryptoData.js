@@ -109,6 +109,7 @@ const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90) => {
 
 const getHeadlinesForCoin = async (coinId, page=1) => {
     const params = coinId ? `&currencies=${coinId}` : '';
+    logger.info(`getting headlines for coin ${coinId} page ${page}`);
     return await getRequest(getUrls.headlines, params + `&page=${page}`);
 }
 

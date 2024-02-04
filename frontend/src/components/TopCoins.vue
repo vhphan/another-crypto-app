@@ -4,9 +4,10 @@ import {apiGet, apiRoutes} from '../api/apiCalls.js';
 import {useMainStore} from "@/store/mainStore.js";
 import {storeToRefs} from "pinia";
 import Sparkline from "@/components/Sparkline.vue";
+import {useQuasar} from "quasar";
 
 const mainStore = useMainStore();
-const {topCoins} = storeToRefs(mainStore);
+const {topCoins, ohlcSymbol} = storeToRefs(mainStore);
 
 const fetchTopCoinsData = async () => {
   const responseData = (await apiGet(apiRoutes.topCoins)).data;
@@ -65,6 +66,16 @@ const handleRowClick = (evt, row) => {
   mainStore.ohlcSymbol = row.symbol;
 };
 
+const $q = useQuasar();
+const rowClasses = computed(() => {
+  return (row) => {
+    if ($q.dark.isActive) {
+      return row.symbol === ohlcSymbol.value ? 'bg-purple-7' : '';
+    }
+    return row.symbol === ohlcSymbol.value ? 'bg-blue-2' : '';
+  };
+});
+
 </script>
 
 <template>
@@ -77,8 +88,8 @@ const handleRowClick = (evt, row) => {
 
     <template v-slot:body="props">
       <q-tr :props="props"
-      @click="(evt) => handleRowClick(evt, props.row)"
-
+            @click="(evt) => handleRowClick(evt, props.row)"
+            :class="rowClasses(props.row)"
       >
         <q-td
             v-for="col in props.cols"
@@ -108,5 +119,7 @@ const handleRowClick = (evt, row) => {
 </template>
 
 <style scoped>
-
+.selected-row {
+  background-color: red;
+}
 </style>

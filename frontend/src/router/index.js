@@ -8,14 +8,19 @@ const routes = [
         component: () => import('@/pages/About.vue'),
     },
     {
-        path: basePath + 'main',
-        name: 'Main',
-        component: () => import('@/pages/Main.vue'),
+        path: basePath + 'topCoins',
+        name: 'TopCoins',
+        component: () => import('@/pages/TopCoinsPage.vue'),
+    },
+    {
+      path: basePath + 'trending',
+        name: 'Trending',
+        component: () => import('@/pages/TrendingPage.vue'),
     },
     // path / redirects to /main
     {
         path: basePath,
-        redirect: basePath +'main',
+        redirect: basePath +'topCoins',
     }
 ];
 

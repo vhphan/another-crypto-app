@@ -9,7 +9,7 @@ export const useMainStore = defineStore({
         version: useLocalStorage('version', '0.0.0'),
         trendingCoins: useLocalStorage('trendingCoins', []),
         topCoins: useLocalStorage('topCoins', []),
-        ohlcSymbol: useLocalStorage('ohlcSymbol', 'BTC'),
+        ohlcSymbol: useLocalStorage('ohlcSymbol', 'btc'),
         ohlcData: useLocalStorage('ohlcData', []),
         headlines: useLocalStorage('headlines', []),
         errorMessage: useLocalStorage('errorMessage', ''),
