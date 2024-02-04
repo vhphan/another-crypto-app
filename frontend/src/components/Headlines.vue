@@ -13,7 +13,7 @@ const filterHeadlinesBySymbol = ref(false);
 const fetchNewsData = async () => {
   const options = {method: 'GET'};
   if (ohlcSymbol.value && filterHeadlinesBySymbol.value) {
-    options.params = {symbol: ohlcSymbol.value};
+    options.params = {coinId: ohlcSymbol.value};
   }
   const responseData = (await apiGet(apiRoutes.headlines, options)).data;
   // check if the response is valid
@@ -61,9 +61,7 @@ const classObj = computed(() => ({
   'text-red-3': $q.dark.isActive,
   'text-blue-10': !$q.dark.isActive
 }));
-// watch(() => $q.dark.isActive, val => {
-//   console.log(val ? 'On dark mode' : 'On light mode');
-// });
+
 watch([() => filterHeadlinesBySymbol.value, () => ohlcSymbol.value],
     () => {
       if (filterHeadlinesBySymbol.value || ohlcSymbol.value) {
