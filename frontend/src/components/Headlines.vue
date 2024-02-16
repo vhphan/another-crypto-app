@@ -25,8 +25,6 @@ const fetchNewsData = async () => {
 
 onMounted(fetchNewsData);
 
-const chartHeight = `${Math.max(window.innerHeight - 600, 250)}px`;
-
 const timeAgo = (date) => {
   const now = new Date();
   const publishedDate = new Date(date);
@@ -73,7 +71,7 @@ watch([() => filterHeadlinesBySymbol.value, () => ohlcSymbol.value],
 <template>
   <div
       class="col-xs-12 col-sm-4"
-      :style="`min-height: 50px; max-height: ${chartHeight}; overflow-y: auto;`"
+      :style="`min-height: 50px; max-height: ${mainStore.chartHeight}px; overflow-y: auto;`"
   >
     <div
         style="border: solid 2px darkred;"
@@ -81,7 +79,7 @@ watch([() => filterHeadlinesBySymbol.value, () => ohlcSymbol.value],
     >
       <q-space/>
       <q-toggle
-          label="Filter by symbol"
+          :label="`Filter by symbol : ${ohlcSymbol.toUpperCase()}`"
           v-model="filterHeadlinesBySymbol"
           color="grey"
       />

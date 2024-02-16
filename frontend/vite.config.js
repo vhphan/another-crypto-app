@@ -6,6 +6,7 @@ import {basePath} from './config';
 import {Loading} from "quasar";
 
 export default defineConfig({
+
     plugins: [
         vue({
             template: {transformAssetUrls}
@@ -24,5 +25,6 @@ export default defineConfig({
     // server: {
     //   host: '0.0.0.0'
     // }
+
 });
 

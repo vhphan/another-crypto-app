@@ -8,6 +8,7 @@ export const apiRoutes = {
     topCoins: '/topCoins',
     ohlc: '/ohlc',
     headlines: '/headlines',
+    dataForSymbol: '/dataForSymbol',
 };
 
 export const apiGet = (urlRef, options = {}) => {

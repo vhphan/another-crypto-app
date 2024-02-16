@@ -17,3 +17,12 @@ GET http://localhost:3000/api/v1/headlines
 
 ###
 GET http://localhost:3000/api/v1/headlines?symbol=sol
+
+###
+GET http://localhost:3000/api/v1/dataForSymbol?symbol=dym
+
+###
+GET http://localhost:3000/api/v1/dataForSymbol?symbol=jup
+
+###
+GET https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,ripple,cardano,solana,chainlink,binancecoin,litecoin,stellar,usd-coin

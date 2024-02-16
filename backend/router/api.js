@@ -1,7 +1,7 @@
 const express = require('express');
 const {cache30m, cache1h} = require("../middlewares/cache");
 const asyncHandler = require("../middlewares/async");
-const {checkIfCoinsInfoIsStale} = require("#src/services/cryptoData");
+const {checkIfCoinsInfoIsStale, getDataForSymbol, getDataForSymbolV2} = require("#src/services/cryptoData");
 const {cache10m} = require("#src/middlewares/cache");
 const router = express.Router();
 
@@ -87,5 +87,37 @@ router.get('/headlines', cache30m, asyncHandler(async (req, res) => {
         }
     )
 );
+
+router.get('/dataForSymbol', cache30m, asyncHandler(async (req, res) => {
+
+    const {getDataForSymbol} = require("#src/services/cryptoData");
+    const {symbol} = req.query;
+    const promises = [
+        getDataForSymbol(symbol),
+        getDataForSymbolV2(symbol),
+    ];
+    const sources = [
+        'coinmarketcap',
+        'cryptocompare',
+    ];
+    const data = await Promise.allSettled(promises);
+
+    // get successful index of promises
+    const successfulPromisesIndexes = data.map((promise, index) => promise.status === 'fulfilled' ? index : null).filter(index => index !== null);
+
+    const successfulPromisesData = data.filter(promise => promise.status === 'fulfilled').map((promise, index) => {
+        return {
+            source: sources[successfulPromisesIndexes[index]],
+            ...promise.value
+        };
+    });
+
+    res.json({
+        success: true,
+        data: successfulPromisesData,
+        params: req.query
+    });
+}));
+
 
 module.exports = router;

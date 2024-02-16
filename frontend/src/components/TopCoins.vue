@@ -1,10 +1,9 @@
 <script setup>
-import {ref, onMounted, computed} from 'vue';
+import {computed, onMounted} from 'vue';
 import {apiGet, apiRoutes} from '../api/apiCalls.js';
 import {useMainStore} from "@/store/mainStore.js";
 import {storeToRefs} from "pinia";
 import Sparkline from "@/components/Sparkline.vue";
-import {useQuasar} from "quasar";
 
 const mainStore = useMainStore();
 const {topCoins, ohlcSymbol} = storeToRefs(mainStore);
@@ -65,10 +64,9 @@ const handleRowClick = (evt, row) => {
   mainStore.ohlcSymbol = row.symbol;
 };
 
-const $q = useQuasar();
 const rowClasses = computed(() => {
   return (row) => {
-      return row.symbol === ohlcSymbol.value ? mainStore.backgroundColor : '';
+    return row.symbol === ohlcSymbol.value ? mainStore.backgroundColor : '';
   };
 });
 
@@ -98,6 +96,12 @@ const rowClasses = computed(() => {
 
           <q-td v-else-if="col.name==='image'">
             <img :src="props.row[col.field]" alt="" style="max-height: 1.5rem;">
+          </q-td>
+
+          <q-td v-else-if="col.name==='symbol'">
+            <div>
+              {{ props.row[col.name].toUpperCase() }}
+            </div>
           </q-td>
 
           <q-td v-else>

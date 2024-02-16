@@ -1,9 +1,9 @@
 const {logger} = require("#src/middlewares/logger");
 const Database = require("#src/db/database");
-const {CRYPTOPANIC_API_KEY} = require("#src/services/keys");
+const {CRYPTOPANIC_API_KEY, CRYPTOCOMPARE_API_KEY, COINMARKET_CAP_API_KEY} = require("#src/services/keys");
 
-async function getRequest(url, params='') {
-    const response = await fetch(url + params);
+async function getRequest(url, params = '', headers = {}) {
+    const response = await fetch(url + params, {headers});
     if (!response.ok) {
         logger.error(`HTTP error! status: ${response.status} for url ${url} and params ${params}`);
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -12,11 +12,27 @@ async function getRequest(url, params='') {
 }
 
 const getUrls = {
+
     trending: 'https://api.coingecko.com/api/v3/search/trending',
+
     coinsInfo: 'https://api.coingecko.com/api/v3/coins/list',
+
     topMarketCapCoins: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true',
+
     ohlc: 'https://min-api.cryptocompare.com/data/v2/histoday',
-    headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY + '&public=true&kind=news'
+
+    headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY + '&public=true&kind=news',
+
+    dataForSymbol: (symbol) => `https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=${symbol}&api_key=$${CRYPTOCOMPARE_API_KEY}`,
+
+    dataForSymbolV2: (symbol) => ({
+        url: `https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?symbol=${symbol}`,
+        headers: {
+            'X-CMC_PRO_API_KEY': COINMARKET_CAP_API_KEY,
+        }
+    }),
+
+
 };
 
 
@@ -32,7 +48,8 @@ const checkIfCoinsInfoIsStale = async (trendingCoins) => {
     const db = Database.db;
     // check if every coin in trendingCoins is in db
     const currentCoins = await new Promise((resolve, reject) => {
-        db.all(`SELECT * FROM coins`, (err, rows) => {
+        db.all(`SELECT *
+                FROM coins`, (err, rows) => {
             if (err) {
                 reject(err);
             }
@@ -71,7 +88,8 @@ const getCoinsInfo = async () => {
 const storeCoinsInfoInDb = async () => {
     const coins = await getCoinsInfo();
     const db = Database.db;
-    const sql = `INSERT INTO coins (id, symbol, name) VALUES (?, ?, ?)`;
+    const sql = `INSERT INTO coins (id, symbol, name)
+                 VALUES (?, ?, ?)`;
 
     const insertPromises = coins.map(coin => {
         return new Promise((resolve, reject) => {
@@ -87,7 +105,8 @@ const storeCoinsInfoInDb = async () => {
 
     await Promise.all(insertPromises);
 
-    const sql2 = `INSERT INTO meta_data (table_name, last_updated) VALUES (?, ?)`;
+    const sql2 = `INSERT INTO meta_data (table_name, last_updated)
+                  VALUES (?, ?)`;
     await new Promise((resolve, reject) => {
         db.run(sql2, ['coins', new Date().toISOString()], (err) => {
             if (err) {
@@ -107,21 +126,27 @@ const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90) => {
     return await getRequest(getUrls.ohlc, params);
 };
 
-const getHeadlinesForCoin = async (coinId, page=1) => {
+const getHeadlinesForCoin = async (coinId, page = 1) => {
     const params = coinId ? `&currencies=${coinId}` : '';
     logger.info(`getting headlines for coin ${coinId} page ${page}`);
     return await getRequest(getUrls.headlines, params + `&page=${page}`);
-}
+};
 
+const getDataForSymbol = (symbol) => {
+    //      cryptoCompare
+    return getRequest(getUrls.dataForSymbol(symbol));
+};
+
+const getDataForSymbolV2 = (symbol) => {
+    //     coinMarketCap
+    let {url, headers} = getUrls.dataForSymbolV2(symbol);
+    return getRequest(url, '', headers);
+};
 
 if (require.main === module) {
-    // getTrending().then(data => console.log(data));
-    // getCoinsInfo().then(data => console.log(data));
-    // storeCoinsInfoInDb().then(() => console.log('done storing coins info in db'));
-    // getOhlc('btc').then(data => console.log(data));
     checkIfCoinsInfoIsStale().then(isStale => console.log(isStale));
-    // getTopMarketCapCoins().then(data => console.log(data));
 }
+
 
 module.exports = {
     getTrending,
@@ -130,5 +155,7 @@ module.exports = {
     getOhlc,
     checkIfCoinsInfoIsStale,
     getTopMarketCapCoins,
-    getHeadlinesForCoin
+    getHeadlinesForCoin,
+    getDataForSymbol,
+    getDataForSymbolV2,
 };

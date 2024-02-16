@@ -3,7 +3,7 @@
 import {useMainStore} from "@/store/mainStore.js";
 import {storeToRefs} from "pinia";
 import {computed, ref} from "vue";
-import {useQuasar} from "quasar";
+import {debounce, useQuasar} from "quasar";
 
 const mainStore = useMainStore();
 const {ohlcData, ohlcSymbol} = storeToRefs(mainStore);
@@ -58,17 +58,16 @@ const series = computed(() => {
   ];
 });
 
-const chartHeight = `${Math.max(window.innerHeight - 600, 250)}px`;
 
-window.addEventListener('resize', () => {
-      const heightValue = Math.max(window.innerHeight - 600, 250);
+window.addEventListener('resize', debounce (() => {
       // chartHeight.value = `${heightValue}px`;
+      if (!apexChart.value && !apexChart.value.updateOptions) return;
       apexChart.value.updateOptions({
         chart: {
-          height: heightValue
+          height: mainStore.chartHeight
         }
       });
-    }
+    }, 1000)
 );
 
 </script>
@@ -79,7 +78,7 @@ window.addEventListener('resize', () => {
                type="candlestick"
                :options="options"
                :series="series"
-               :height="chartHeight"
+               :height="mainStore.chartHeight"
                ref="apexChart"
     ></apexchart>
   </div>

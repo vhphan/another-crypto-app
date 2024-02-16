@@ -1,16 +1,29 @@
 <script setup>
 import MainLayout from './components/MainLayout.vue'
 import {useMainStore} from "@/store/mainStore.js";
-import {watch} from "vue";
-import {defineProps, defineEmits} from 'vue';
+import {defineEmits, defineProps, watch} from "vue";
+import {useQuasar} from "quasar";
 
 const props = defineProps();
 const emits = defineEmits();
 const mainStore = useMainStore();
 
-watch(() => mainStore.ohlcSymbol, (value, oldValue) => {
-  mainStore.getOhlcData(value);
-});
+watch(() => mainStore.ohlcSymbol, () => {
+      mainStore.getOhlcData(mainStore.ohlcSymbol, 'USD', 90);
+    }, {immediate: true}
+);
+
+
+
+const $q = useQuasar();
+
+window.onbeforeunload = () => {
+  mainStore.darkMode = $q.dark.isActive;
+};
+
+window.onload = () => {
+  $q.dark.set(mainStore.darkMode);
+};
 
 </script>
 

@@ -94,6 +94,9 @@ X-CMC_PRO_API_KEY:{{COINMARKET_CAP_API_KEY}}
 
 GET https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=10
 
+
+
+
 ###
 
 GET http://localhost:3000/api/v1/ohlc?symbol=btc&vsCurrency=USD&days=90
@@ -107,10 +110,20 @@ GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}&cur
 GET https://cryptopanic.com/api/v1/posts/?auth_token={{CRYPTOPANIC_API_KEY}}&kind=news&public=true
 
 
-
-
 ### get news
 GET https://cryptopanic.com/api/v1/posts/?auth_token={{123}}
+
+
+
+
+###
+
+GET https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=DYM&api_key={{CRYPTOCOMPARE_API_KEY}}
+
+###
+
+GET https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?symbol=DYM
+X-CMC_PRO_API_KEY:{{COINMARKET_CAP_API_KEY}}
 
 
 
