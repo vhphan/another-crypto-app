@@ -90,7 +90,7 @@ watch([() => filterHeadlinesBySymbol.value, () => ohlcSymbol.value],
       <q-card-section>
         <div class="row items-center no-wrap">
           <div class="col">
-            <div class="text-bold text-subtitle1">{{ headline.title }}}</div>
+            <div class="text-bold text-subtitle1">{{ headline.title }}</div>
             <div class="text-subtitle2">{{ timeAgo(headline.published_at) }}</div>
           </div>
         </div>

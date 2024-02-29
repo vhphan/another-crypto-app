@@ -59,7 +59,7 @@ const series = computed(() => {
 });
 
 
-window.addEventListener('resize', debounce (() => {
+window.addEventListener('resize', debounce(() => {
       // chartHeight.value = `${heightValue}px`;
       if (!apexChart.value || !apexChart.value.updateOptions) return;
       apexChart.value.updateOptions({
@@ -70,10 +70,21 @@ window.addEventListener('resize', debounce (() => {
     }, 1000)
 );
 
+const {ohlcTimeResolution} = storeToRefs(mainStore);
 </script>
 
 <template>
-  <div class="row">
+  <div class="chart-container">
+    <q-select
+        class='select-box'
+        v-model="ohlcTimeResolution"
+        :options="['daily', 'hourly']"
+        label="Resolution"
+        dense
+        bg-color="blue-1"
+        outlined
+        standout
+    />
     <apexchart class="col-12"
                type="candlestick"
                :options="options"
@@ -82,10 +93,18 @@ window.addEventListener('resize', debounce (() => {
                ref="apexChart"
     ></apexchart>
   </div>
-
-
 </template>
 
 <style scoped>
+.chart-container {
+  position: relative;
+}
 
+.select-box {
+  position: absolute;
+  top: 1px; /* adjust as needed */
+  left: 5px; /* adjust as needed */
+  z-index: 10;
+  width: 150px;
+}
 </style>

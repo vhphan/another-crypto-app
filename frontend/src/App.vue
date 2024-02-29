@@ -8,7 +8,7 @@ const props = defineProps();
 const emits = defineEmits();
 const mainStore = useMainStore();
 
-watch(() => mainStore.ohlcSymbol, () => {
+watch([() => mainStore.ohlcSymbol, ()=>mainStore.ohlcTimeResolution], () => {
       mainStore.getOhlcData(mainStore.ohlcSymbol, 'USD', 90, mainStore.ohlcTimeResolution);
     }, {immediate: true}
 );
