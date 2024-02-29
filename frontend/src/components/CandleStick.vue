@@ -12,7 +12,7 @@ const apexChart = ref(null);
 const cleanedData = computed(() => {
       return ohlcData.value.map((item) => {
         return {
-          x: new Date(item['time']),
+          x: new Date(item['time'] * 1000),
           y: [item['open'], item['high'], item['low'], item['close']]
         };
       });
@@ -61,7 +61,7 @@ const series = computed(() => {
 
 window.addEventListener('resize', debounce (() => {
       // chartHeight.value = `${heightValue}px`;
-      if (!apexChart.value && !apexChart.value.updateOptions) return;
+      if (!apexChart.value || !apexChart.value.updateOptions) return;
       apexChart.value.updateOptions({
         chart: {
           height: mainStore.chartHeight
