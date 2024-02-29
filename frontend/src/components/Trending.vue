@@ -66,6 +66,19 @@ const handleRowClick = (evt, row) => {
   mainStore.trendingOhlcSymbol = row.symbol.toLowerCase();
 };
 
+const selectRow = () => {
+  if (trendingOhlcSymbol.value === '') {
+    mainStore.trendingOhlcSymbol = tableRows.value[0].symbol.toLowerCase();
+  }
+//   find the row with the selected symbol and set the background color
+  const selectedRow = tableRows.value.find(row => row.symbol.toLowerCase() === trendingOhlcSymbol.value);
+  if (!selectedRow) {
+    mainStore.trendingOhlcSymbol = tableRows.value[0].symbol.toLowerCase();
+  }
+};
+
+onMounted(selectRow);
+
 </script>
 
 <template>

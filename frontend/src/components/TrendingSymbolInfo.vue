@@ -15,17 +15,25 @@ const assetDescription = computed(() => {
 
   if (coinMarketData?.length > 0 && coinMarketData[0]?.Data?.ASSET_DESCRIPTION) {
     finalDescription += '<b>CoinMarketCap Description:</b><br/>';
+    finalDescription += '<hr/>';
     finalDescription += coinMarketData[0].Data.ASSET_DESCRIPTION;
   }
 
-  if (cryptoCompareData?.length > 0 && cryptoCompareData[0]?.data && cryptoCompareData[0].data[trendingOhlcSymbol.value.toUpperCase()]) {
-    if (finalDescription) {
-      finalDescription += '<br/>';
-      finalDescription += '<br/>';
-    }
-    finalDescription += '<b>CryptoCompare Description:</b><br/>';
-    finalDescription += cryptoCompareData[0].data[trendingOhlcSymbol.value.toUpperCase()][0]?.description || '';
+  if (cryptoCompareData?.length > 0) {
+    finalDescription += '<br/>';
+    finalDescription += '<br/>';
+    finalDescription += `<b>CryptoCompare Description(s) :</b><br/>`;
   }
+  cryptoCompareData?.forEach((data, index) => {
+    if (data?.data && data.data[trendingOhlcSymbol.value.toUpperCase()]) {
+      if (finalDescription) {
+        //   add a separator line
+        finalDescription += '<hr/>';
+      }
+      finalDescription += `<b>Description (${index + 1})</b><br/>`;
+      finalDescription += data.data[trendingOhlcSymbol.value.toUpperCase()][0]?.description || '';
+    }
+  });
   return finalDescription;
 });
 
