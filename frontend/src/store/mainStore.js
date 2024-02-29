@@ -22,15 +22,17 @@ export const useMainStore = defineStore({
 
         trendingOhlcSymbol: useLocalStorage('trendingOhlcSymbol', ''),
         trendingOhlcData: {},
+        ohlcTimeResolution: useLocalStorage('ohlcTimeResolution', 'daily'),
 
     }),
     actions: {
-        async getOhlcData(symbol, vsCurrency, days) {
+        async getOhlcData(symbol, vsCurrency, days, timeResolution) {
             const responseData = (await apiGet(apiRoutes.ohlc, {
                     params: {
                         symbol: symbol,
                         vsCurrency: vsCurrency,
                         days: days,
+                        timeResolution: timeResolution,
                     }
                 })
             ).data;

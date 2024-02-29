@@ -21,6 +21,8 @@ const getUrls = {
 
     ohlc: 'https://min-api.cryptocompare.com/data/v2/histoday',
 
+    ohlcHourly: 'https://min-api.cryptocompare.com/data/v2/histohour',
+
     headlines: 'https://cryptopanic.com/api/v1/posts/?auth_token=' + CRYPTOPANIC_API_KEY + '&public=true&kind=news',
 
     dataForSymbol: (symbol) => `https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=${symbol}&api_key=$${CRYPTOCOMPARE_API_KEY}`,
@@ -121,9 +123,17 @@ const storeCoinsInfoInDb = async () => {
     logger.info('done storing coins info in db');
 };
 
-const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90) => {
+const getOhlc = async (symbol = 'btc', vsCurrency = 'usd', days = 90, timeResolution='daily') => {
     const params = `?fsym=${symbol}&tsym=${vsCurrency}&limit=${days}`;
-    return await getRequest(getUrls.ohlc, params);
+    switch (timeResolution) {
+        case 'hourly':
+            return await getRequest(getUrls.ohlcHourly, params);
+        case 'daily':
+            return await getRequest(getUrls.ohlc, params);
+        default:
+            return await getRequest(getUrls.ohlc, params);
+    }
+
 };
 
 const getHeadlinesForCoin = async (coinId, page = 1) => {

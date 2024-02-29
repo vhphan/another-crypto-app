@@ -26,7 +26,6 @@ const assetDescription = computed(() => {
     finalDescription += '<b>CryptoCompare Description:</b><br/>';
     finalDescription += cryptoCompareData[0].data[trendingOhlcSymbol.value.toUpperCase()][0]?.description || '';
   }
-
   return finalDescription;
 });
 

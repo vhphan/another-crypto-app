@@ -64,7 +64,8 @@ router.get('/topCoins', cache1h, asyncHandler(async (req, res) => {
 router.get('/ohlc', cache10m, asyncHandler(async (req, res) => {
             const {getOhlc} = require("#src/services/cryptoData");
             const {symbol, days, vsCurrency} = req.query;
-            const ohlc = await getOhlc(symbol.toLowerCase(), vsCurrency.toLowerCase(), days);
+            const timeResolution = req.query.timeResolution || 'daily';
+            const ohlc = await getOhlc(symbol.toLowerCase(), vsCurrency.toLowerCase(), days, timeResolution);
             res.json({
                 success: true,
                 data: ohlc?.Data?.Data,

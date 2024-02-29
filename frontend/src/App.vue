@@ -9,7 +9,7 @@ const emits = defineEmits();
 const mainStore = useMainStore();
 
 watch(() => mainStore.ohlcSymbol, () => {
-      mainStore.getOhlcData(mainStore.ohlcSymbol, 'USD', 90);
+      mainStore.getOhlcData(mainStore.ohlcSymbol, 'USD', 90, mainStore.ohlcTimeResolution);
     }, {immediate: true}
 );
 
